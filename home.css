@@ -1,0 +1,36 @@
+.carousel-item img {
+    width: auto;
+    max-height: 650px;
+  }
+  .middle{
+      margin-top: 120px;
+  }
+  .footer{
+      margin-top: 70px;
+  }
+.bg-dark{
+    transition:500ms ease;
+    background:transparent !important;
+}
+.bg-dark.scrolled{
+    background:black !important;
+}
+#brand{
+    font-size:50px;
+}
+.navbar .navbar-nav li a{
+    font-size:20px;
+}
+.navbar .navbar-nav .nav-item .nav-link:hover{
+color:white !important;
+}
+.column{
+    float: left;
+    padding:20px;
+}
+.midle,.right{
+    margin-left: 110px;
+}
+.GET{
+  margin-top: 20px;  
+}
