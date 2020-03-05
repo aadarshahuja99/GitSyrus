@@ -1,12 +1,8 @@
 <?php
      require 'db.php';
      require 'header.php';
-     require 'PHPMailer/PHPMailerAutoload.php';     $query = 'SELECT city, field1 FROM volunteers1';
-     $result = mysqli_query($conn, $query);
-     while($row=mysqli_fetch_array($result))
-     {
-          if($row['city']=='others' or $row['field1']=='others')
-          {
+     require 'PHPMailer/PHPMailerAutoload.php';
+     if (isset($_POST['app'])){
                // $email = $_POST['email'];
                // $password = $_POST['password'];
                // $to_id = $_POST['toid'];
@@ -19,10 +15,10 @@
                $mail->SMTPSecure = 'tls';
                $mail->SMTPAuth = true;
                $mail->Username = 'aadarshahuja99@gmail.com';
-               $mail->Password = 'mummy#papa3000';
-               $mail->addAddress('aadarshahuja99@gmail.com');
-               $mail->Subject = 'Geography';
-               $mail->msgHTML('this is to inform you that you ae through to the next round....your username is your email and your password is your email for login purpose');
+               $mail->Password = 'Mummy#papa118810';
+               $mail->addAddress('pawanchichariya5@gmail.com');
+               $mail->Subject = 'Request For Session';
+               $mail->msgHTML('I want To Meet Ypu in Person. ');
                if (!$mail->send()) {
                $error = "Mailer Error: " . $mail->ErrorInfo;
                echo '<p id="para">'.$error.'</p>';
@@ -31,13 +27,4 @@
                echo '<p id="para">Message sent!</p>';
                }
           }
-               
-               else{
-               echo '<p id="para">Please enter valid data</p>';
-               }            
-          }
-
-     mysqli_close($conn);
-     
-
-?>
+          ?>

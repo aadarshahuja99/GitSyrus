@@ -9,7 +9,7 @@ error_reporting(0);
 <html>
   <head>
 
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
       // Load the Google Transliterate API
       google.load("elements", "1", {
@@ -27,21 +27,13 @@ var ids = [ "first_name", "last_name" ];
   control.makeTransliteratable(ids);
       }
       google.setOnLoadCallback(onLoad);
-    </script>
+    </script> -->
 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-
-var $select1 = $( '#select1' ),
-    $select2 = $( '#select2' ),
-    $options = $select2.find( 'option' );
-    
-$select1.on( 'change', function() {
-  $select2.html( $options.filter( '[value="' + this.value + '"]' ) );
-} ).trigger( 'change' );
 
     </script>
     <title>APPLICANT DETAILS</title>
@@ -213,12 +205,8 @@ $select1.on( 'change', function() {
   <body>
     <div class="testbox">
     <form action="" method="GET">
-      <?php
-        $a=$_SESSION['name1'];
-        $b=$_SESSION['city1'];
-      ?>
       <div class="banner">
-        <h1><strong>FORM1 DETAILS</strong></h1>
+        <h1><strong>REGISTRATION DETAILS</strong></h1>
       </div>
        <div class="item">
         <p><strong>NAME<strong></p>
@@ -228,82 +216,14 @@ $select1.on( 'change', function() {
         <p><strong>Email</strong></p>
         <input type="text" id="last_name" name="email"/>
       </div>
-
-
-    <div class="item">
-        <p><strong>Age</strong></p>
-        <input type="text" name="age"/>
-      </div>
     <div class="item">
         <p><strong>Phone</strong></p>
-        <input type="text" name="phn"/>
+        <input type="text" name="phone_number"/>
       </div>
 <div class="item">
-        <p><strong>Aadhar No:</strong></p>
-        <input type="text" name="aadhar"/>
+        <p><strong>Year of Graduation</strong></p>
+        <input type="text" name="graduation_year"/>
       </div>
-
-
-
-      <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
-          <span class="label-input100">Address</span>
-          <textarea class="input100" name="address" placeholder="Address"></textarea>
-        </div>
-
-
-
-
-
-<div class="item">
-        <p><strong>SELECT YOUR SKILL </strong></p>
-        <select required name="field1" id="select2">
-          
-          <option value="dance"><div>DANCE</div>         &nbsp   <div></div></option>
-          
-           <option value="drama"><div>DRAMA</div>         &nbsp   <div></div></option>
-          
-          <option value="coding"><div>CODING</div>         &nbsp   <div></div></option>
-
-            <option value="electronics"><div>ELECTRONICS</div>         &nbsp   <div></div></option>
-
-              <option value="public speaking"><div>PUBLIC SPEAKING</div>         &nbsp   <div></div></option>
-          
-          
-          
-
-        </select>
-      </div>
-
-
-
-
-
-        
-      
-
-
-
-
-
-
-    <div class="item">
-        <p><strong>City you live IN </strong></p>
-        <select required name="city" id="select2">
-          
-          <option value="mumbai"><div>MUMBAI</div>         &nbsp   <div></div></option>
-          
-           <option value="pune"><div>PUNE</div>         &nbsp   <div></div></option>
-          
-          <option value="others"><div>OTHERS</div>         &nbsp   <div></div></option>
-          
-
-        </select>
-      </div>
-
-      
-      
-    
-    
         <div class="btn-block">
           <input type="submit" name="submit" class="button">
         </div>
@@ -319,42 +239,17 @@ if($_GET['submit']){
 
 $a=$_GET['name'];
 $b=$_GET['email'];
-$c=$_GET['age'];
-$d=$_GET['phn'];
+$c=$_GET['phone_number'];
+$d=$_GET['graduation_year'];
 
-$e=$_GET['aadhar'];
-$f=$_GET['address'];
-$g=$_GET['field1'];
-$h=$_GET['city'];
+if($a!="" && $b!="" && $c!="" && $d!=""){
 
-
-
-
-
-
-if($a!="" && $b!="" && $c!="" && $d!="" && $e!="" && $f!="" && $g!="" && $h!=""){
-
-$query="INSERT INTO volunteers1 (name,email,age,phn,aadhar,address,field1,city,password)
-VALUES ('$a','$b','$c','$d','$e','$f','$g','$h','$b') ";
+$query="INSERT INTO Student (name,email,phone_number,graduation_year)
+VALUES ('$a','$b','$c','$d') ";
 
 $data=mysqli_query($conn,$query);
 
-if($data){
-  echo"data inserted";
-}
-
-
-
-}
-else{
-  echo "insert all";
-}
-
-
-}
-
-
-
+}}
 
 ?>
 
@@ -366,15 +261,5 @@ else{
 
 
   </body>
-   <script type="text/javascript">
-
-var $select1 = $( '#select1' ),
-    $select2 = $( '#select2' ),
-    $options = $select2.find( 'option' );
-    
-$select1.on( 'change', function() {
-  $select2.html( $options.filter( '[value="' + this.value + '"]' ) );
-} ).trigger( 'change' );
- </script>
     
 </html>

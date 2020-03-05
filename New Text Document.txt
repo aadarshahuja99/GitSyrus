@@ -1,0 +1,18 @@
+<?php
+require_once('PHPMailer/PHPMailerAutoload.php');
+
+$mail=new PHPMailer();
+$mail->isSMTP();
+$mail->SMTPAuth=true;
+$mail->SMTPSecure='ssl';
+$mail->Host='smtp.gmail.com';
+$mail->port='465';
+$mail->isHTML();
+$mail->Username='aadarshahuja99@gmail.com';
+$mail->password ='mummy#papa3000';
+$mail->SetFrom('aadarsh');
+$mail->Subject='hello';
+$mail->Body='Test Successful';
+$mail->AddAddress('aadarshahuja99@gmail.com');
+$mail->Send();
+?>
